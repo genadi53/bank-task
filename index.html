@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Task</title>
+  </head>
+  <body>
+    <h1>Bank</h1>
+
+    <form action="withdraw" method="get">
+      <label for="ammount-withdraw">Enter ammount to withdraw</label><br />
+      <input
+        id="ammount-withdraw"
+        name="ammount"
+        type="number"
+        min="10"
+        step="10"
+        required
+      />
+      <br />
+      <label for="pin">Enter your pin code</label><br />
+      <input id="pin" name="pin" value="" type="text" required />
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+  <script src="app.js"></script>
+</html>
