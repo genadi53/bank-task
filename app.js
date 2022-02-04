@@ -1,9 +1,4 @@
-const banknoteTypes = {
-  100: 100,
-  50: 50,
-  20: 20,
-  10: 10,
-};
+const banknoteTypes = [100, 50, 20, 10];
 
 const LIMIT_WITHDRAW = 400;
 const TAX = 0.2;
@@ -88,3 +83,24 @@ historyButton.addEventListener("click", async (e) => {
   });
   historyDiv.innerHTML = dataToDisplay;
 });
+
+const changeFunc = (number) => {
+  if (number < 0 || number % 10 !== 0) return;
+  if (number === 0) return 0;
+
+  const banknotes = [];
+  let total = number;
+
+  for (let i = banknoteTypes.length - 1; i >= 0; i--) {
+    while (total >= banknoteTypes[i]) {
+      total = total - banknoteTypes[i];
+      banknotes.push(banknoteTypes[i]);
+    }
+  }
+
+  const result = {};
+  banknotes.forEach((x) => {
+    result[x] = (result[x] || 0) + 1;
+  });
+  console.log(result);
+};
