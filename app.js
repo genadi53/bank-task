@@ -73,6 +73,7 @@ form.addEventListener("submit", async (e) => {
 
         // Display and save the receipt and change the dispayed balance
         receiptDiv.innerHTML = message;
+        receiptDiv.classList.remove("hidden");
         balanceDiv.textContent = `Balance: ${balance}`;
         withdrawsHistory.push(receipt);
       } else {
@@ -101,6 +102,7 @@ historyButton.addEventListener("click", async (e) => {
       Date: ${r.date} <hr /> <br />`;
   });
   historyDiv.innerHTML = dataToDisplay;
+  historyDiv.classList.remove("hidden");
 });
 
 // Function to calculate the number and value of returned banknotes
